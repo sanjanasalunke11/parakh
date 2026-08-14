@@ -1,0 +1,33 @@
+# Lean requirements for the deployed (Render) image.
+#
+# Deliberately excludes sentence-transformers/numpy/torch: they're
+# optional (EMBEDDING_PROVIDER=sentence_transformer) and the provider
+# factory already falls back to the zero-dependency hashing embedding
+# provider when they're not installed (see app/providers/factory.py).
+# On Render's free tier (512MB RAM), torch alone risks an OOM crash,
+# so the deployed default is EMBEDDING_PROVIDER=hashing.
+#
+# For local dev with real sentence-transformer embeddings, use
+# requirements.txt instead.
+
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+python-multipart==0.0.19
+pydantic==2.10.3
+pydantic-settings==2.7.0
+python-dotenv==1.0.1
+
+SQLAlchemy==2.0.36
+PyMySQL==1.1.1
+psycopg2-binary==2.9.10
+cryptography==44.0.0
+
+anthropic==0.40.0
+httpx==0.27.2
+twilio==9.11.0
+
+trafilatura==1.12.2
+beautifulsoup4==4.12.3
+
+pytesseract==0.3.13
+Pillow==11.0.0

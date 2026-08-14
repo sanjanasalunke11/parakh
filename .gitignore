@@ -1,0 +1,26 @@
+# --- Python / backend ---
+backend/venv/
+backend/__pycache__/
+**/__pycache__/
+*.pyc
+backend/.env
+backend/parakh.db
+backend/*.db
+
+# --- Node / frontend ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/*.local
+frontend/*.tsbuildinfo
+
+# --- Editors / OS / tooling ---
+.vscode/
+.idea/
+.claude/
+.DS_Store
+Thumbs.db
+
+# --- Logs ---
+*.log
+npm-debug.log*

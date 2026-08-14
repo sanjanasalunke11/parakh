@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-base-950 text-slate-200 antialiased;
+  background-image: theme("backgroundImage.grid-glow");
+  background-attachment: fixed;
+}
+
+::selection {
+  @apply bg-brand-500/40 text-white;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: theme("colors.base.600");
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.base.500");
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-base-900/60 border border-white/[0.06] backdrop-blur-xl shadow-card rounded-2xl;
+  }
+
+  .glass-card {
+    @apply bg-base-850/80 border border-white/[0.06] backdrop-blur-xl shadow-card rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-brand-500 to-brand-600 px-5 py-2.5 font-semibold text-white shadow-glow transition hover:brightness-110 active:brightness-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2 font-medium text-slate-300 transition hover:bg-white/[0.07] hover:text-white disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-white/10 bg-base-900/80 px-4 py-3 text-sm text-slate-100 placeholder:text-slate-500 outline-none transition focus:border-brand-500/60 focus:ring-2 focus:ring-brand-500/20;
+  }
+
+  .tag-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium;
+  }
+}
